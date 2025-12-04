@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Button from "../ui/Button";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 
 export default function Navigation() {
+  const t = useTranslations("navigation");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -31,6 +34,12 @@ export default function Navigation() {
   const scrollToFinalCTA = () => {
     document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const navItems = [
+    { label: t("howItWorks"), id: "how-it-works" },
+    { label: t("features"), id: "features" },
+    { label: t("story"), id: "story" },
+  ];
 
   return (
     <AnimatePresence>
@@ -85,44 +94,47 @@ export default function Navigation() {
 
               {/* Navigation Links */}
               <div className="hidden md:flex items-center gap-8">
-                {["How it works", "Features", "Story"].map((item) => (
+                {navItems.map((item) => (
                   <button
-                    key={item}
+                    key={item.id}
                     onClick={() => {
-                      const id = item.toLowerCase().replace(/\s+/g, "-");
-                      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                      document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
                     }}
                     className="text-sm font-medium text-text-body hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 ))}
               </div>
 
-              {/* CTA Button */}
-              <Button
-                variant="primary"
-                size="sm"
-                onClick={scrollToFinalCTA}
-                icon={
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                }
-                iconPosition="right"
-              >
-                Get Early Access
-              </Button>
+              {/* Right side: Language Switcher + CTA */}
+              <div className="flex items-center gap-3">
+                <LanguageSwitcher />
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={scrollToFinalCTA}
+                  icon={
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  }
+                  iconPosition="right"
+                >
+                  <span className="hidden sm:inline">{t("getEarlyAccess")}</span>
+                  <span className="sm:hidden">Join</span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

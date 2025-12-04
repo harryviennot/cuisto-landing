@@ -1,0 +1,210 @@
+{
+  "metadata": {
+    "title": "Cuistudio - Toutes vos recettes au même endroit",
+    "description": "Transformez vos TikToks, captures d'écran et liens éparpillés en livre de recettes personnel. Extraction de recettes par IA depuis n'importe quelle source."
+  },
+  "navigation": {
+    "howItWorks": "Comment ça marche",
+    "features": "Fonctionnalités",
+    "story": "L'histoire",
+    "getEarlyAccess": "Accès anticipé"
+  },
+  "hero": {
+    "badge": "On construit en public • Rejoignez l'aventure",
+    "headline1": "Capturez. Retrouvez. Cuisinez.",
+    "headline2": "En un",
+    "headline2Highlight": "instant",
+    "subheadline": "Une seule app qui lit vos TikToks, screenshots et notes manuscrites — et les transforme en",
+    "subheadlineHighlight": "vraies recettes, prêtes à cuisiner",
+    "buttonText": "Rejoindre l'aventure",
+    "earlyTesters": "100+ testeurs",
+    "joinedThisWeek": "inscrits cette semaine",
+    "discover": "Découvrir"
+  },
+  "problem": {
+    "bridgeLine": "Mais d'abord, parlons du vrai problème...",
+    "badge": "Ça vous parle ?",
+    "headline": "Vos recettes sont",
+    "headlineHighlight": "éparpillées.",
+    "subheadline": "Vous avez gardé des dizaines de recettes. Mais quand vient l'heure de cuisiner, impossible d'en retrouver une seule.",
+    "painPoints": {
+      "scrollOfDoom": {
+        "title": "Le scroll sans fin",
+        "description": "Vous l'avez vue sur TikTok tard le soir. Likée. Et maintenant ? Disparue sous 500 autres vidéos."
+      },
+      "screenshotRoulette": {
+        "title": "Le cimetière des captures",
+        "description": "Votre pellicule photo : recettes, memes, tickets de caisse. Retrouver ce gratin ? Mission impossible."
+      },
+      "tabPurgatory": {
+        "title": "La jungle des onglets",
+        "description": "15 onglets ouverts. 3 applications. Et toujours pas moyen de retrouver cette recette de poulet."
+      },
+      "sendMeThatVoid": {
+        "title": "Le mystère du message",
+        "description": "Un ami vous l'a envoyée sur Instagram. Ou par SMS ? Vous ne la retrouverez jamais."
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "Comment ça marche",
+    "headline": "Trois étapes pour",
+    "headlineHighlight": "tout centraliser",
+    "subheadline": "De liens éparpillés à carnet de recettes organisé, en moins de 30 secondes.",
+    "steps": {
+      "capture": {
+        "number": "01",
+        "title": "Capturez",
+        "subtitle": "Depuis n'importe où",
+        "description": "Collez un lien TikTok, déposez une capture d'écran, ou photographiez la recette de votre grand-mère. On accepte tout.",
+        "features": [
+          "TikTok & Instagram",
+          "Photos & captures",
+          "Liens web",
+          "Notes vocales"
+        ]
+      },
+      "extract": {
+        "number": "02",
+        "title": "Extrayez",
+        "subtitle": "L'IA fait le travail",
+        "description": "Notre IA analyse les vidéos, lit les images, transcrit l'audio. En quelques secondes, tout devient une fiche recette structurée.",
+        "features": [
+          "Transcription vidéo",
+          "Lecture d'images",
+          "Analyse intelligente",
+          "Mise en forme auto"
+        ]
+      },
+      "cook": {
+        "number": "03",
+        "title": "Cuisinez",
+        "subtitle": "L'esprit tranquille",
+        "description": "De belles fiches recettes avec instructions détaillées, minuteries intégrées et ajustement des quantités.",
+        "features": [
+          "Mode pas à pas",
+          "Minuteries intégrées",
+          "Ajustement des portions",
+          "Vos notes perso"
+        ]
+      }
+    }
+  },
+  "features": {
+    "headline": "Pensé pour ceux qui",
+    "headlineHighlight": "cuisinent vraiment.",
+    "subheadline": "On a supprimé le superflu, les publicités et les histoires interminables. Juste des outils efficaces.",
+    "items": {
+      "universalImport": {
+        "title": "Import universel",
+        "description": "TikToks, Reels, captures d'écran, recette manuscrite de grand-mère. Si c'est une recette, on sait la lire."
+      },
+      "cookingMode": {
+        "title": "Mode cuisine",
+        "description": "Plus besoin de déverrouiller le téléphone les mains pleines de farine. L'écran reste allumé, les minuteries sont là."
+      },
+      "spotifyOfFood": {
+        "title": "Vos playlists de recettes",
+        "description": "Organisez vos recettes en collections. « Soirs de semaine », « Repas entre amis », « Batch cooking »."
+      },
+      "makeItYours": {
+        "title": "Adaptez tout",
+        "description": "Ajustez les quantités, remplacez un ingrédient, ajoutez vos astuces. C'est votre carnet de recettes."
+      }
+    }
+  },
+  "founder": {
+    "headline": "Pourquoi je crée Cuistudio",
+    "role": "Fondateur & Développeur",
+    "name": "Harry Viennot",
+    "story": {
+      "paragraph1": "Comme vous, j'ai accumulé des dizaines de recettes. TikToks, Reels Instagram, captures d'écran, onglets ouverts depuis des semaines.",
+      "paragraph2": "Un soir, j'ai passé 30 minutes à chercher une recette de pâtes dans ma pellicule. Je savais que je l'avais quelque part. Introuvable.",
+      "paragraph3": "C'est là que l'idée de Cuistudio est née. Un seul endroit pour toutes mes recettes — organisé, facile à parcourir, et vraiment utilisable quand on est en cuisine, les mains dans la farine."
+    },
+    "contact": "Une suggestion ? Une idée ? Envie de discuter ?"
+  },
+  "finalCta": {
+    "badge": "Places limitées",
+    "headline1": "Fini les recettes perdues.",
+    "headline2": "Place à la cuisine.",
+    "subheadline": "Rejoignez la liste d'attente et soyez parmi les premiers à rassembler toutes vos recettes en un seul endroit.",
+    "buttonText": "Réserver ma place",
+    "trustIndicators": {
+      "freeToJoin": "Gratuit",
+      "noSpam": "Pas de spam",
+      "earlyAccessPerks": "Avantages exclusifs"
+    }
+  },
+  "footer": {
+    "tagline": "Toutes vos recettes, au même endroit.",
+    "tagline2": "Capturez, organisez, cuisinez.",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "CGU",
+    "copyright": "Cuistudio. Tous droits réservés.",
+    "builtWith": "Fait avec",
+    "by": "par"
+  },
+  "waitlistForm": {
+    "placeholder": "Votre email",
+    "defaultButton": "Rejoindre",
+    "successTitle": "C'est fait !",
+    "successMessage": "Vous êtes sur la liste.",
+    "errorInvalidEmail": "Merci d'entrer une adresse email valide",
+    "errorGeneric": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "visuals": {
+    "addRecipe": "Ajouter",
+    "paste": "Coller",
+    "extracting": "Extraction en cours...",
+    "identifyingIngredients": "Identification des ingrédients",
+    "parsingInstructions": "Analyse des instructions...",
+    "formattingTimers": "Mise en forme des temps",
+    "stepOf": "Étape {current} sur {total}",
+    "boilPastaWater": "Faire bouillir l'eau",
+    "boilPastaDescription": "Porter à ébullition une grande casserole d'eau salée. Ajouter les pâtes et cuire al dente.",
+    "nextStep": "Étape suivante",
+    "imported": "Importée",
+    "min": "min",
+    "kcal": "kcal"
+  },
+  "sources": {
+    "tiktok": "TikTok",
+    "reels": "Reels",
+    "shorts": "Shorts",
+    "articles": "Articles",
+    "blogs": "Blogs",
+    "websites": "Sites web",
+    "cookbooks": "Livres",
+    "screenshots": "Capture",
+    "photos": "Photos",
+    "dictation": "Dictée"
+  },
+  "recipes": {
+    "spicyVodkaPasta": "Pâtes à la vodka",
+    "gigiHadidStyle": "Recette TikTok",
+    "greenGoddessSalad": "Salade verte complète",
+    "bakedByMelissa": "Recette healthy",
+    "crispyPotatoes": "Pommes de terre rôties",
+    "asmrCooking": "Recette réconfort",
+    "roastChicken": "Poulet rôti",
+    "withSourdoughCroutons": "et croûtons maison",
+    "bestBrownies": "Brownies fondants",
+    "fudgyAndChewy": "Chocolat intense",
+    "avocadoToast": "Avocado toast",
+    "cafeStyle": "Comme au café",
+    "momsLasagna": "Lasagnes maison",
+    "handwrittenRecipe": "Recette de famille",
+    "smoothieBowl": "Smoothie bowl",
+    "instagramStory": "Vu sur Instagram",
+    "caesarSalad": "Salade César",
+    "restaurantMenu": "Version bistrot",
+    "applePie": "Tarte aux pommes",
+    "grandmasSecret": "Recette de mamie"
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "fr": "Français"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "title": "Cuistudio - All Your Recipes in One Place",
+    "description": "Turn TikToks, screenshots, and scattered links into your personal cookbook. AI-powered recipe extraction from any source."
+  },
+  "navigation": {
+    "howItWorks": "How it works",
+    "features": "Features",
+    "story": "Story",
+    "getEarlyAccess": "Get Early Access"
+  },
+  "hero": {
+    "badge": "Building in public • Join the adventure",
+    "headline1": "Save any recipe.",
+    "headline2": "Find it",
+    "headline2Highlight": "instantly",
+    "subheadline": "One app that reads TikToks, screenshots, and handwritten notes — and turns them into",
+    "subheadlineHighlight": "beautiful, cookable recipes",
+    "buttonText": "Join the Adventure",
+    "earlyTesters": "100+ early testers",
+    "joinedThisWeek": "joined this week",
+    "discover": "Discover"
+  },
+  "problem": {
+    "bridgeLine": "But first, let's talk about why you need this...",
+    "badge": "Sound familiar?",
+    "headline": "Your recipes are",
+    "headlineHighlight": "everywhere.",
+    "subheadline": "You've saved hundreds of amazing recipes. But when you're hungry and ready to cook, you can't find a single one.",
+    "painPoints": {
+      "scrollOfDoom": {
+        "title": "The Scroll of Doom",
+        "description": "You saw it on TikTok at 2am. You saved it. Now it's gone forever, buried under 500 other videos."
+      },
+      "screenshotRoulette": {
+        "title": "Screenshot Roulette",
+        "description": "Your camera roll is a mess of recipes, memes, and receipts. Good luck finding that lasagna."
+      },
+      "tabPurgatory": {
+        "title": "Tab Purgatory",
+        "description": "15 tabs open. 3 different apps. And you still can't remember where you saw that chicken recipe."
+      },
+      "sendMeThatVoid": {
+        "title": "The 'Send Me That' Void",
+        "description": "Your friend sent it on Instagram. Or was it iMessage? You'll never find it again."
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "How it works",
+    "headline": "Three steps to",
+    "headlineHighlight": "recipe freedom",
+    "subheadline": "From scattered links to organized cookbook in under 30 seconds.",
+    "steps": {
+      "capture": {
+        "number": "01",
+        "title": "Capture",
+        "subtitle": "From anywhere",
+        "description": "Paste a TikTok link, drop a screenshot, or snap a photo of grandma's handwritten recipe. We accept it all.",
+        "features": ["TikTok & Instagram", "Photos & Screenshots", "URLs & Links", "Voice notes"]
+      },
+      "extract": {
+        "number": "02",
+        "title": "Extract",
+        "subtitle": "AI magic",
+        "description": "Our AI watches videos, reads images, and transcribes audio. In seconds, chaos becomes a structured recipe.",
+        "features": ["Video transcription", "Image OCR", "Smart parsing", "Auto-formatting"]
+      },
+      "cook": {
+        "number": "03",
+        "title": "Cook",
+        "subtitle": "With confidence",
+        "description": "Beautiful recipe cards with step-by-step instructions, built-in timers, and ingredient scaling. Finally, cooking without chaos.",
+        "features": ["Step-by-step mode", "Built-in timers", "Ingredient scaling", "Personal notes"]
+      }
+    }
+  },
+  "features": {
+    "headline": "Built for the",
+    "headlineHighlight": "modern home cook.",
+    "subheadline": "We stripped away the clutter, the ads, and the life stories. Just powerful tools to help you cook better.",
+    "items": {
+      "universalImport": {
+        "title": "Universal Import",
+        "description": "TikToks, Reels, screenshots, or grandma's handwritten notes. If it's a recipe, we can read it."
+      },
+      "cookingMode": {
+        "title": "Cooking Mode",
+        "description": "No more unlocking your phone with floury hands. Screen stays on, timers are built-in."
+      },
+      "spotifyOfFood": {
+        "title": "The Spotify of Food",
+        "description": "Organize recipes into collections. 'Weeknight Dinners', 'Date Night', 'Sunday Prep'."
+      },
+      "makeItYours": {
+        "title": "Make It Yours",
+        "description": "Scale ingredients, swap substitutes, and add your own notes. It's your cookbook now."
+      }
+    }
+  },
+  "founder": {
+    "headline": "Why I'm building Cuistudio",
+    "role": "Founder & Developer",
+    "name": "Harry Viennot",
+    "story": {
+      "paragraph1": "Like you, I've saved hundreds of recipes. TikToks, Instagram Reels, random screenshots, and browser tabs I'll never find again.",
+      "paragraph2": "One night, I spent 30 minutes scrolling through my camera roll looking for a specific pasta recipe. I knew I had it. I just couldn't find it.",
+      "paragraph3": "That was the moment Cuistudio was born. I wanted to build one beautiful place for all recipes — organized, searchable, and actually usable when you're standing in the kitchen with messy hands."
+    },
+    "contact": "Have a feature request or just want to say hi?"
+  },
+  "finalCta": {
+    "badge": "Limited early access spots available",
+    "headline1": "Stop losing recipes.",
+    "headline2": "Start cooking.",
+    "subheadline": "Join the waitlist and be among the first to bring all your scattered recipes home to one beautiful place.",
+    "buttonText": "Claim Your Spot",
+    "trustIndicators": {
+      "freeToJoin": "Free to join",
+      "noSpam": "No spam, ever",
+      "earlyAccessPerks": "Early access perks"
+    }
+  },
+  "footer": {
+    "tagline": "One beautiful place for all your recipes.",
+    "tagline2": "Save, organize, cook.",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "Cuistudio. All rights reserved.",
+    "builtWith": "Built with",
+    "by": "by"
+  },
+  "waitlistForm": {
+    "placeholder": "Enter your email",
+    "defaultButton": "Get Early Access",
+    "successTitle": "You're in!",
+    "successMessage": "You're on the list!",
+    "errorInvalidEmail": "Please enter a valid email address",
+    "errorGeneric": "Something went wrong. Please try again."
+  },
+  "visuals": {
+    "addRecipe": "Add Recipe",
+    "paste": "Paste",
+    "extracting": "Extracting recipe...",
+    "identifyingIngredients": "Identifying ingredients",
+    "parsingInstructions": "Parsing instructions...",
+    "formattingTimers": "Formatting timers",
+    "stepOf": "Step {current} of {total}",
+    "boilPastaWater": "Boil the pasta water",
+    "boilPastaDescription": "Bring a large pot of salted water to a rolling boil. Add the pasta and cook until al dente.",
+    "nextStep": "Next Step",
+    "imported": "Imported",
+    "min": "min",
+    "kcal": "kcal"
+  },
+  "sources": {
+    "tiktok": "TikTok",
+    "reels": "Reels",
+    "shorts": "Shorts",
+    "articles": "Articles",
+    "blogs": "Blogs",
+    "websites": "Websites",
+    "cookbooks": "Cookbooks",
+    "screenshots": "Screenshot",
+    "photos": "Photos",
+    "dictation": "Dictation"
+  },
+  "recipes": {
+    "spicyVodkaPasta": "Spicy Vodka Pasta",
+    "gigiHadidStyle": "Gigi Hadid Style",
+    "greenGoddessSalad": "Green Goddess Salad",
+    "bakedByMelissa": "Baked by Melissa",
+    "crispyPotatoes": "Crispy Potatoes",
+    "asmrCooking": "ASMR Cooking",
+    "roastChicken": "Roast Chicken",
+    "withSourdoughCroutons": "with Sourdough Croutons",
+    "bestBrownies": "Best Brownies",
+    "fudgyAndChewy": "Fudgy & Chewy",
+    "avocadoToast": "Avocado Toast",
+    "cafeStyle": "Cafe Style",
+    "momsLasagna": "Mom's Lasagna",
+    "handwrittenRecipe": "Handwritten Recipe",
+    "smoothieBowl": "Smoothie Bowl",
+    "instagramStory": "Instagram Story",
+    "caesarSalad": "Caesar Salad",
+    "restaurantMenu": "Restaurant Menu",
+    "applePie": "Apple Pie",
+    "grandmasSecret": "Grandma's Secret"
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "fr": "Français"
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Button from "./Button";
 
 interface WaitlistFormProps {
@@ -13,21 +14,24 @@ interface WaitlistFormProps {
 
 export default function WaitlistForm({
   className = "",
-  buttonText = "Get Early Access",
+  buttonText,
   source = "landing",
   variant = "default",
 }: WaitlistFormProps) {
+  const t = useTranslations("waitlistForm");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+
+  const displayButtonText = buttonText || t("defaultButton");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     if (!email || !email.includes("@")) {
       setStatus("error");
-      setMessage("Please enter a valid email address");
+      setMessage(t("errorInvalidEmail"));
       return;
     }
 
@@ -44,15 +48,15 @@ export default function WaitlistForm({
 
       if (response.ok) {
         setStatus("success");
-        setMessage(data.message || "You're on the list!");
+        setMessage(data.message || t("successMessage"));
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || "Something went wrong. Please try again.");
+        setMessage(data.error || t("errorGeneric"));
       }
     } catch {
       setStatus("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage(t("errorGeneric"));
     }
   };
 
@@ -117,7 +121,7 @@ export default function WaitlistForm({
               className="text-2xl font-bold text-text-heading mb-2"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              You're in!
+              {t("successTitle")}
             </h3>
             <p className="text-text-body">{message}</p>
           </motion.div>
@@ -144,7 +148,7 @@ export default function WaitlistForm({
         <div className="relative flex-1">
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder={t("placeholder")}
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -187,7 +191,7 @@ export default function WaitlistForm({
           }
           iconPosition="right"
         >
-          {buttonText}
+          {displayButtonText}
         </Button>
       </div>
 

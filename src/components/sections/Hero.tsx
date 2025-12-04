@@ -2,10 +2,12 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import WaitlistForm from "../ui/WaitlistForm";
 import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
+  const t = useTranslations("hero");
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -67,7 +69,7 @@ export default function Hero() {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
                   </span>
                   <span className="text-sm font-medium text-text-body">
-                    Building in public • Join the adventure
+                    {t("badge")}
                   </span>
                 </div>
               </motion.div>
@@ -82,11 +84,11 @@ export default function Hero() {
                   className="text-5xl sm:text-6xl md:text-7xl font-bold text-text-heading leading-[0.95] tracking-tight"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
-                  <span className="block">Save any recipe.</span>
+                  <span className="block">{t("headline1")}</span>
                   <span className="block mt-2">
-                    Find it{" "}
+                    {t("headline2")}{" "}
                     <span className="relative inline-block">
-                      <span className="relative z-10 italic text-primary">instantly</span>
+                      <span className="relative z-10 italic text-primary">{t("headline2Highlight")}</span>
                       <motion.span
                         className="absolute -bottom-2 left-0 right-0 h-3 bg-forest-100 -z-0 rounded-sm"
                         initial={{ scaleX: 0 }}
@@ -106,8 +108,8 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="mt-8 text-xl text-text-body leading-relaxed max-w-xl mx-auto lg:mx-0"
               >
-                One app that reads TikToks, screenshots, and handwritten notes — and turns them into{" "}
-                <span className="text-text-heading font-medium">beautiful, cookable recipes</span>.
+                {t("subheadline")}{" "}
+                <span className="text-text-heading font-medium">{t("subheadlineHighlight")}</span>.
               </motion.p>
 
               {/* Desktop only: Waitlist form and trust indicators */}
@@ -120,7 +122,7 @@ export default function Hero() {
                   id="waitlist"
                   className="mt-10 max-w-md"
                 >
-                  <WaitlistForm source="hero" buttonText="Join the Adventure" />
+                  <WaitlistForm source="hero" buttonText={t("buttonText")} />
                 </motion.div>
 
                 {/* Trust indicators */}
@@ -143,7 +145,7 @@ export default function Hero() {
                     ))}
                   </div>
                   <p className="text-sm text-text-muted">
-                    <span className="font-medium text-text-heading">100+ early testers</span> joined this week
+                    <span className="font-medium text-text-heading">{t("earlyTesters")}</span> {t("joinedThisWeek")}
                   </p>
                 </motion.div>
               </div>
@@ -173,7 +175,7 @@ export default function Hero() {
                 id="waitlist-mobile"
                 className="mt-2 max-w-md mx-auto"
               >
-                <WaitlistForm source="hero" buttonText="Join the Adventure" />
+                <WaitlistForm source="hero" buttonText={t("buttonText")} />
               </motion.div>
 
               {/* Trust indicators */}
@@ -217,7 +219,7 @@ export default function Hero() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2 text-text-muted"
         >
-          <span className="text-xs tracking-widest uppercase">Discover</span>
+          <span className="text-xs tracking-widest uppercase">{t("discover")}</span>
           <svg
             className="w-5 h-5"
             fill="none"

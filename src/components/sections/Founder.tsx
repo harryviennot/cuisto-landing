@@ -2,9 +2,11 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { User, EnvelopeSimple } from "@phosphor-icons/react";
 
 export default function Founder() {
+  const t = useTranslations("founder");
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
@@ -25,8 +27,8 @@ export default function Founder() {
                 <User size={64} weight="duotone" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-                <p className="text-white font-bold text-lg">Harry Viennot</p>
-                <p className="text-stone-300 text-sm">Founder & Developer</p>
+                <p className="text-white font-bold text-lg">{t("name")}</p>
+                <p className="text-stone-300 text-sm">{t("role")}</p>
               </div>
             </div>
           </motion.div>
@@ -42,24 +44,18 @@ export default function Founder() {
               className="text-3xl sm:text-4xl font-bold text-text-heading mb-8"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Why I'm building Cuistudio
+              {t("headline")}
             </h2>
 
             <div className="space-y-6 text-lg text-text-body leading-relaxed">
-              <p>
-                Like you, I've saved hundreds of recipes. TikToks, Instagram Reels, random screenshots, and browser tabs I'll never find again.
-              </p>
-              <p>
-                One night, I spent 30 minutes scrolling through my camera roll looking for a specific pasta recipe. I knew I had it. I just couldn't find it.
-              </p>
-              <p>
-                That was the moment Cuistudio was born. I wanted to build one beautiful place for all recipes — organized, searchable, and actually usable when you're standing in the kitchen with messy hands.
-              </p>
+              <p>{t("story.paragraph1")}</p>
+              <p>{t("story.paragraph2")}</p>
+              <p>{t("story.paragraph3")}</p>
             </div>
 
             <div className="mt-10 pt-8 border-t border-stone-200">
               <p className="font-medium text-text-heading mb-4">
-                Have a feature request or just want to say hi?
+                {t("contact")}
               </p>
               <a
                 href="mailto:hello@cuistudio.app"

@@ -2,9 +2,11 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import WaitlistForm from "../ui/WaitlistForm";
 
 export default function FinalCTA() {
+  const t = useTranslations("finalCta");
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
@@ -65,7 +67,7 @@ export default function FinalCTA() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <span className="text-sm font-medium text-primary">
-              Limited early access spots available
+              {t("badge")}
             </span>
           </motion.div>
 
@@ -77,11 +79,11 @@ export default function FinalCTA() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-heading leading-tight"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Stop losing recipes.
+            {t("headline1")}
             <br />
             <span className="relative inline-block mt-2">
               <span className="relative z-10 bg-gradient-to-r from-primary via-forest-500 to-primary bg-clip-text text-transparent">
-                Start cooking.
+                {t("headline2")}
               </span>
               <motion.span
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-forest-500 rounded-full"
@@ -99,8 +101,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-xl sm:text-2xl text-text-body max-w-2xl mx-auto"
           >
-            Join the waitlist and be among the first to bring all your scattered
-            recipes home to one beautiful place.
+            {t("subheadline")}
           </motion.p>
 
           {/* Form */}
@@ -110,7 +111,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-10 max-w-lg mx-auto"
           >
-            <WaitlistForm source="footer-cta" buttonText="Claim Your Spot" />
+            <WaitlistForm source="footer-cta" buttonText={t("buttonText")} />
           </motion.div>
 
           {/* Trust indicators */}
@@ -134,7 +135,7 @@ export default function FinalCTA() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Free to join</span>
+              <span>{t("trustIndicators.freeToJoin")}</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -150,7 +151,7 @@ export default function FinalCTA() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>No spam, ever</span>
+              <span>{t("trustIndicators.noSpam")}</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -166,7 +167,7 @@ export default function FinalCTA() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Early access perks</span>
+              <span>{t("trustIndicators.earlyAccessPerks")}</span>
             </div>
           </motion.div>
 

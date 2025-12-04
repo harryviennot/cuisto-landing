@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import {
   MagicWand,
   CookingPot,
@@ -9,46 +10,17 @@ import {
   SlidersHorizontal,
 } from "@phosphor-icons/react";
 
-const features = [
-  {
-    icon: MagicWand,
-    title: "Universal Import",
-    description: "TikToks, Reels, screenshots, or grandma's handwritten notes. If it's a recipe, we can read it.",
-    className: "md:col-span-2 bg-stone-900 text-white",
-    iconBg: "bg-white/10",
-    iconColor: "text-white",
-    descriptionColor: "text-stone-300",
-  },
-  {
-    icon: CookingPot,
-    title: "Cooking Mode",
-    description: "No more unlocking your phone with floury hands. Screen stays on, timers are built-in.",
-    className: "md:col-span-1 bg-white border border-stone-200",
-    iconBg: "bg-stone-100",
-    iconColor: "text-stone-700",
-    descriptionColor: "text-stone-600",
-  },
-  {
-    icon: Playlist,
-    title: "The Spotify of Food",
-    description: "Organize recipes into collections. 'Weeknight Dinners', 'Date Night', 'Sunday Prep'.",
-    className: "md:col-span-1 bg-[#E8E6E1]",
-    iconBg: "bg-stone-900/5",
-    iconColor: "text-stone-600",
-    descriptionColor: "text-stone-600",
-  },
-  {
-    icon: SlidersHorizontal,
-    title: "Make It Yours",
-    description: "Scale ingredients, swap substitutes, and add your own notes. It's your cookbook now.",
-    className: "md:col-span-2 bg-primary text-white",
-    iconBg: "bg-white/10",
-    iconColor: "text-white",
-    descriptionColor: "text-white/70",
-  },
+const featureKeys = ["universalImport", "cookingMode", "spotifyOfFood", "makeItYours"] as const;
+const featureIcons = [MagicWand, CookingPot, Playlist, SlidersHorizontal];
+const featureStyles = [
+  { className: "md:col-span-2 bg-stone-900 text-white", iconBg: "bg-white/10", iconColor: "text-white", descriptionColor: "text-stone-300" },
+  { className: "md:col-span-1 bg-white border border-stone-200", iconBg: "bg-stone-100", iconColor: "text-stone-700", descriptionColor: "text-stone-600" },
+  { className: "md:col-span-1 bg-[#E8E6E1]", iconBg: "bg-stone-900/5", iconColor: "text-stone-600", descriptionColor: "text-stone-600" },
+  { className: "md:col-span-2 bg-primary text-white", iconBg: "bg-white/10", iconColor: "text-white", descriptionColor: "text-white/70" },
 ];
 
 export default function Features() {
+  const t = useTranslations("features");
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
@@ -66,36 +38,39 @@ export default function Features() {
             className="text-4xl sm:text-5xl font-bold text-text-heading leading-tight mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Built for the <br />
-            <span className="text-primary italic">modern home cook.</span>
+            {t("headline")} <br />
+            <span className="text-primary italic">{t("headlineHighlight")}</span>
           </h2>
           <p className="text-xl text-text-body max-w-xl">
-            We stripped away the clutter, the ads, and the life stories.
-            Just powerful tools to help you cook better.
+            {t("subheadline")}
           </p>
         </motion.div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-3xl p-8 flex flex-col justify-between min-h-[240px] ${feature.className}`}
-            >
-              <div>
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${feature.iconBg}`}>
-                  <feature.icon size={24} weight="duotone" className={feature.iconColor} />
+          {featureKeys.map((key, index) => {
+            const Icon = featureIcons[index];
+            const style = featureStyles[index];
+            return (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`rounded-3xl p-8 flex flex-col justify-between min-h-[240px] ${style.className}`}
+              >
+                <div>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${style.iconBg}`}>
+                    <Icon size={24} weight="duotone" className={style.iconColor} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{t(`items.${key}.title`)}</h3>
+                  <p className={`text-lg leading-relaxed ${style.descriptionColor}`}>
+                    {t(`items.${key}.description`)}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                <p className={`text-lg leading-relaxed ${feature.descriptionColor}`}>
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

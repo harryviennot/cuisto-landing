@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -68,9 +70,9 @@ export default function Footer() {
                 </span>
               </div>
               <p className="text-forest-300 max-w-xs">
-                One beautiful place for all your recipes.
+                {t("tagline")}
                 <br />
-                Save, organize, cook.
+                {t("tagline2")}
               </p>
             </motion.div>
 
@@ -99,19 +101,19 @@ export default function Footer() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                Contact
+                {t("contact")}
               </a>
               <a
                 href="/privacy"
                 className="text-forest-300 hover:text-white transition-colors duration-300"
               >
-                Privacy
+                {t("privacy")}
               </a>
               <a
                 href="/terms"
                 className="text-forest-300 hover:text-white transition-colors duration-300"
               >
-                Terms
+                {t("terms")}
               </a>
             </motion.div>
 
@@ -151,7 +153,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-forest-400"
             >
-              {currentYear} Cuistudio. All rights reserved.
+              {currentYear} {t("copyright")}
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -160,7 +162,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-forest-500 flex items-center gap-2"
             >
-              Built with
+              {t("builtWith")}
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
@@ -170,7 +172,7 @@ export default function Footer() {
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
               </motion.span>
-              by{" "}
+              {t("by")}{" "}
               <span className="text-forest-300 font-medium">Harry Viennot</span>
             </motion.p>
           </div>
