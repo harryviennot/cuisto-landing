@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import {
   LinkedinLogoIcon
 } from "@phosphor-icons/react";
@@ -108,18 +109,18 @@ export default function Footer() {
                 </svg>
                 {t("contact")}
               </a>
-              <a
+              <Link
                 href="/privacy"
                 className="text-forest-300 hover:text-white transition-colors duration-300"
               >
                 {t("privacy")}
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/terms"
                 className="text-forest-300 hover:text-white transition-colors duration-300"
               >
                 {t("terms")}
-              </a>
+              </Link>
             </motion.div>
 
             {/* Social links */}
