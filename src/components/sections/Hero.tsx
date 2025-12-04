@@ -120,13 +120,13 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
                   id="waitlist"
-                  className="mt-10 max-w-md"
+                  className="mt-10 max-w-lg"
                 >
                   <WaitlistForm source="hero" buttonText={t("buttonText")} />
                 </motion.div>
 
                 {/* Trust indicators */}
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.2 }}
@@ -147,7 +147,7 @@ export default function Hero() {
                   <p className="text-sm text-text-muted">
                     <span className="font-medium text-text-heading">{t("earlyTesters")}</span> {t("joinedThisWeek")}
                   </p>
-                </motion.div>
+                </motion.div> */}
               </div>
             </div>
 
@@ -173,13 +173,13 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
                 id="waitlist-mobile"
-                className="mt-2 max-w-md mx-auto"
+                className="mt-2 max-w-lg mx-auto"
               >
                 <WaitlistForm source="hero" buttonText={t("buttonText")} />
               </motion.div>
 
               {/* Trust indicators */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
@@ -200,7 +200,7 @@ export default function Hero() {
                 <p className="text-sm text-text-muted">
                   <span className="font-medium text-text-heading">100+ early testers</span> joined this week
                 </p>
-              </motion.div>
+              </motion.div> */}
             </div>
 
           </div>

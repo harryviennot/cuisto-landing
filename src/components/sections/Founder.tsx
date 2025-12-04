@@ -58,11 +58,11 @@ export default function Founder() {
                 {t("contact")}
               </p>
               <a
-                href="mailto:hello@cuistudio.app"
+                href="mailto:harry@cuisto.app"
                 className="inline-flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors"
               >
                 <EnvelopeSimple size={20} weight="bold" />
-                <span>hello@cuistudio.app</span>
+                <span>harry@cuisto.app</span>
               </a>
             </div>
           </motion.div>

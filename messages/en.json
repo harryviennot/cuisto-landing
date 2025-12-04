@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Cuistudio - All Your Recipes in One Place",
+    "title": "Cuisto - All Your Recipes in One Place",
     "description": "Turn TikToks, screenshots, and scattered links into your personal cookbook. AI-powered recipe extraction from any source."
   },
   "navigation": {
@@ -57,21 +57,36 @@
         "title": "Capture",
         "subtitle": "From anywhere",
         "description": "Paste a TikTok link, drop a screenshot, or snap a photo of grandma's handwritten recipe. We accept it all.",
-        "features": ["TikTok & Instagram", "Photos & Screenshots", "URLs & Links", "Voice notes"]
+        "features": [
+          "TikTok & Instagram",
+          "Photos & Screenshots",
+          "URLs & Links",
+          "Voice notes"
+        ]
       },
       "extract": {
         "number": "02",
         "title": "Extract",
         "subtitle": "AI magic",
         "description": "Our AI watches videos, reads images, and transcribes audio. In seconds, chaos becomes a structured recipe.",
-        "features": ["Video transcription", "Image OCR", "Smart parsing", "Auto-formatting"]
+        "features": [
+          "Video transcription",
+          "Image OCR",
+          "Smart parsing",
+          "Auto-formatting"
+        ]
       },
       "cook": {
         "number": "03",
         "title": "Cook",
         "subtitle": "With confidence",
         "description": "Beautiful recipe cards with step-by-step instructions, built-in timers, and ingredient scaling. Finally, cooking without chaos.",
-        "features": ["Step-by-step mode", "Built-in timers", "Ingredient scaling", "Personal notes"]
+        "features": [
+          "Step-by-step mode",
+          "Built-in timers",
+          "Ingredient scaling",
+          "Personal notes"
+        ]
       }
     }
   },
@@ -99,13 +114,13 @@
     }
   },
   "founder": {
-    "headline": "Why I'm building Cuistudio",
+    "headline": "Why I'm building Cuisto",
     "role": "Founder & Developer",
     "name": "Harry Viennot",
     "story": {
       "paragraph1": "Like you, I've saved hundreds of recipes. TikToks, Instagram Reels, random screenshots, and browser tabs I'll never find again.",
       "paragraph2": "One night, I spent 30 minutes scrolling through my camera roll looking for a specific pasta recipe. I knew I had it. I just couldn't find it.",
-      "paragraph3": "That was the moment Cuistudio was born. I wanted to build one beautiful place for all recipes — organized, searchable, and actually usable when you're standing in the kitchen with messy hands."
+      "paragraph3": "That was the moment Cuisto was born. I wanted to build one beautiful place for all recipes — organized, searchable, and actually usable when you're standing in the kitchen with messy hands."
     },
     "contact": "Have a feature request or just want to say hi?"
   },
@@ -127,7 +142,7 @@
     "contact": "Contact",
     "privacy": "Privacy",
     "terms": "Terms",
-    "copyright": "Cuistudio. All rights reserved.",
+    "copyright": "Cuisto. All rights reserved.",
     "builtWith": "Built with",
     "by": "by"
   },

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Cuistudio - Toutes vos recettes au même endroit",
+    "title": "Cuisto - Toutes vos recettes au même endroit",
     "description": "Transformez vos TikToks, captures d'écran et liens éparpillés en livre de recettes personnel. Extraction de recettes par IA depuis n'importe quelle source."
   },
   "navigation": {
@@ -114,13 +114,13 @@
     }
   },
   "founder": {
-    "headline": "Pourquoi je crée Cuistudio",
+    "headline": "Pourquoi je crée Cuisto",
     "role": "Fondateur & Développeur",
     "name": "Harry Viennot",
     "story": {
       "paragraph1": "Comme vous, j'ai accumulé des dizaines de recettes. TikToks, Reels Instagram, captures d'écran, onglets ouverts depuis des semaines.",
       "paragraph2": "Un soir, j'ai passé 30 minutes à chercher une recette de pâtes dans ma pellicule. Je savais que je l'avais quelque part. Introuvable.",
-      "paragraph3": "C'est là que l'idée de Cuistudio est née. Un seul endroit pour toutes mes recettes — organisé, facile à parcourir, et vraiment utilisable quand on est en cuisine, les mains dans la farine."
+      "paragraph3": "C'est là que l'idée de Cuisto est née. Un seul endroit pour toutes mes recettes — organisé, facile à parcourir, et vraiment utilisable quand on est en cuisine, les mains dans la farine."
     },
     "contact": "Une suggestion ? Une idée ? Envie de discuter ?"
   },
@@ -142,7 +142,7 @@
     "contact": "Contact",
     "privacy": "Confidentialité",
     "terms": "CGU",
-    "copyright": "Cuistudio. Tous droits réservés.",
+    "copyright": "Cuisto. Tous droits réservés.",
     "builtWith": "Fait avec",
     "by": "par"
   },

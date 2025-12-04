@@ -66,7 +66,7 @@ export default function Footer() {
                   className="text-2xl font-semibold text-white"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
-                  Cuistudio
+                  Cuisto
                 </span>
               </div>
               <p className="text-forest-300 max-w-xs">
@@ -85,7 +85,7 @@ export default function Footer() {
               className="flex flex-wrap items-center justify-center gap-8"
             >
               <a
-                href="mailto:hello@cuistudio.app"
+                href="mailto:harry@cuisto.app"
                 className="text-forest-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
               >
                 <svg

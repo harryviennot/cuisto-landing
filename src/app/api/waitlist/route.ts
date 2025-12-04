@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { email, source } = body;
+    const { email, source, utm_source, utm_medium, utm_campaign, referrer } = body;
 
     // Validate email
     if (!email || typeof email !== "string") {
@@ -45,6 +45,10 @@ export async function POST(request: NextRequest) {
         source: source || "landing",
         ip_address: ip,
         user_agent: userAgent,
+        utm_source: utm_source || null,
+        utm_medium: utm_medium || null,
+        utm_campaign: utm_campaign || null,
+        referrer: referrer || null,
       });
 
     if (error) {

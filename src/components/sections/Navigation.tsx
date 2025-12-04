@@ -88,7 +88,7 @@ export default function Navigation() {
                   className="text-xl font-semibold text-text-heading tracking-tight hidden sm:block"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
-                  Cuistudio
+                  Cuisto
                 </span>
               </motion.a>
 
