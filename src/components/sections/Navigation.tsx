@@ -73,13 +73,12 @@ export default function Navigation() {
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-soft group-hover:shadow-medium transition-shadow duration-300">
-                    <span
-                      className="text-white font-bold text-lg"
-                      style={{ fontFamily: "var(--font-playfair)" }}
-                    >
-                      C
-                    </span>
+                  <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-soft group-hover:shadow-medium transition-shadow duration-300 p-2">
+                    <img
+                      src="/images/cuisto-logo.png"
+                      alt="Cuisto"
+                      className="w-full h-full object-contain brightness-0 invert"
+                    />
                   </div>
                   {/* Subtle glow on hover */}
                   <div className="absolute inset-0 rounded-xl bg-primary opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />

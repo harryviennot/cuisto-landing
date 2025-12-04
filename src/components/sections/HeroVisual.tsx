@@ -189,7 +189,7 @@ export default function HeroVisual() {
     }, []);
 
     return (
-        <div className="relative w-full max-w-[320px] h-[420px] mx-auto flex items-center justify-center">
+        <div className="relative w-full max-w-[320px] h-[420px] lg:max-w-[480px] lg:h-[620px] mx-auto flex items-center justify-center">
             {/* Satellite Sources */}
             {currentItems.map((item, idx) => (
                 <SatelliteSource
@@ -239,16 +239,17 @@ function SatelliteSource({ item, isActive, index, sourceName }: { item: Showcase
             }}
         >
             <div
-                className={`flex items-center p-2.5 rounded-2xl shadow-lg border transition-colors duration-500 ${isActive ? "bg-white border-stone-200" : "bg-white/60 border-white/40"
+                className={`flex items-center p-2.5 lg:p-3 rounded-2xl shadow-lg border transition-colors duration-500 ${isActive ? "bg-white border-stone-200" : "bg-white/60 border-white/40"
                     }`}
             >
                 <div
-                    className="h-6 w-6 rounded-md flex items-center justify-center"
+                    className="h-6 w-6 lg:h-8 lg:w-8 rounded-md lg:rounded-lg flex items-center justify-center"
                     style={{
                         background: `linear-gradient(135deg, ${item.source.colors[0]}, ${item.source.colors[1]})`,
                     }}
                 >
-                    <Icon size={16} color="white" weight="fill" />
+                    <Icon size={16} className="lg:hidden" color="white" weight="fill" />
+                    <Icon size={20} className="hidden lg:block" color="white" weight="fill" />
                 </div>
 
                 <motion.div
@@ -260,7 +261,7 @@ function SatelliteSource({ item, isActive, index, sourceName }: { item: Showcase
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="overflow-hidden"
                 >
-                    <span className="pl-2 text-[10px] font-bold uppercase tracking-wider text-stone-600 whitespace-nowrap block">
+                    <span className="pl-2 text-[10px] lg:text-xs font-bold uppercase tracking-wider text-stone-600 whitespace-nowrap block">
                         {sourceName}
                     </span>
                 </motion.div>
@@ -271,8 +272,8 @@ function SatelliteSource({ item, isActive, index, sourceName }: { item: Showcase
 
 function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { activeIndex: number; currentItems: ShowcaseItem[]; tRecipes: (key: string) => string; tVisuals: (key: string) => string }) {
     return (
-        <div className="relative z-20 w-[248px] aspect-[3/4]">
-            <div className="absolute inset-0 bg-white rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+        <div className="relative z-20 w-[248px] lg:w-[360px] aspect-[3/4]">
+            <div className="absolute inset-0 bg-white rounded-2xl lg:rounded-3xl flex flex-col shadow-2xl overflow-hidden">
                 {/* Image Area */}
                 <div className="relative h-[80%] bg-stone-100 overflow-hidden">
                     <AnimatePresence mode="popLayout">
@@ -299,14 +300,14 @@ function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { active
                     </AnimatePresence>
 
                     {/* Content Overlay */}
-                    <div className="absolute inset-x-0 bottom-0 p-3 pb-2 flex flex-col justify-end h-full pointer-events-none">
-                        <div className="flex gap-2 mb-2">
-                            <span className="px-2 py-1 rounded-md bg-white/20 border border-white/10 text-[10px] font-bold uppercase tracking-wide text-white backdrop-blur-sm">
+                    <div className="absolute inset-x-0 bottom-0 p-3 lg:p-4 pb-2 lg:pb-3 flex flex-col justify-end h-full pointer-events-none">
+                        <div className="flex gap-2 mb-2 lg:mb-3">
+                            <span className="px-2 py-1 lg:px-3 lg:py-1.5 rounded-md bg-white/20 border border-white/10 text-[10px] lg:text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm">
                                 {tVisuals("imported")}
                             </span>
                         </div>
 
-                        <div className="h-12 relative">
+                        <div className="h-12 lg:h-16 relative">
                             <AnimatePresence mode="popLayout">
                                 {currentItems.map((item, idx) => (
                                     idx === activeIndex && (
@@ -318,10 +319,10 @@ function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { active
                                             exit={{ opacity: 0, y: -16 }}
                                             transition={{ duration: 0.5 }}
                                         >
-                                            <h3 className="text-2xl font-serif text-white leading-none mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>
+                                            <h3 className="text-2xl lg:text-3xl font-serif text-white leading-none mb-1 lg:mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
                                                 {tRecipes(item.recipe.titleKey)}
                                             </h3>
-                                            <p className="text-white/70 text-xs font-medium">
+                                            <p className="text-white/70 text-xs lg:text-sm font-medium">
                                                 {tRecipes(item.recipe.subtitleKey)}
                                             </p>
                                         </motion.div>
@@ -333,10 +334,11 @@ function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { active
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="flex-1 bg-white px-4 flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                        <Clock size={16} className="text-stone-400" weight="duotone" />
-                        <div className="h-5 w-[54px] relative overflow-hidden">
+                <div className="flex-1 bg-white px-4 lg:px-5 flex items-center justify-between">
+                    <div className="flex items-center gap-1 lg:gap-1.5">
+                        <Clock size={16} className="text-stone-400 lg:hidden" weight="duotone" />
+                        <Clock size={20} className="text-stone-400 hidden lg:block" weight="duotone" />
+                        <div className="h-5 lg:h-6 w-[54px] lg:w-[65px] relative overflow-hidden">
                             <AnimatePresence mode="popLayout">
                                 {currentItems.map((item, idx) => (
                                     idx === activeIndex && (
@@ -348,7 +350,7 @@ function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { active
                                             exit={{ opacity: 0, y: -8 }}
                                             transition={{ duration: 0.4 }}
                                         >
-                                            <span className="text-sm font-medium text-stone-500 whitespace-nowrap">
+                                            <span className="text-sm lg:text-base font-medium text-stone-500 whitespace-nowrap">
                                                 {item.recipe.time} {tVisuals("min")}
                                             </span>
                                         </motion.div>
@@ -358,9 +360,10 @@ function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { active
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-1">
-                        <Fire size={16} className="text-stone-400" weight="duotone" />
-                        <div className="h-5 w-[60px] relative overflow-hidden">
+                    <div className="flex items-center gap-1 lg:gap-1.5">
+                        <Fire size={16} className="text-stone-400 lg:hidden" weight="duotone" />
+                        <Fire size={20} className="text-stone-400 hidden lg:block" weight="duotone" />
+                        <div className="h-5 lg:h-6 w-[60px] lg:w-[72px] relative overflow-hidden">
                             <AnimatePresence mode="popLayout">
                                 {currentItems.map((item, idx) => (
                                     idx === activeIndex && (
@@ -372,7 +375,7 @@ function CentralDeck({ activeIndex, currentItems, tRecipes, tVisuals }: { active
                                             exit={{ opacity: 0, y: -8 }}
                                             transition={{ duration: 0.4 }}
                                         >
-                                            <span className="text-sm font-medium text-stone-500 whitespace-nowrap">
+                                            <span className="text-sm lg:text-base font-medium text-stone-500 whitespace-nowrap">
                                                 {item.recipe.calories} {tVisuals("kcal")}
                                             </span>
                                         </motion.div>
