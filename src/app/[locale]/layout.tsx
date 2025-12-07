@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "cookbook app",
       "AI recipe",
     ],
-    authors: [{ name: "Cuistudio" }],
+    authors: [{ name: "Cuisto" }],
     openGraph: {
       title: t('title'),
       description: t('description'),
