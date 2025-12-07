@@ -118,9 +118,9 @@
     "role": "Founder & Developer",
     "name": "Harry Viennot",
     "story": {
-      "paragraph1": "Like you, I've saved hundreds of recipes. TikToks, Instagram Reels, random screenshots, and browser tabs I'll never find again.",
-      "paragraph2": "One night, I spent 30 minutes scrolling through my camera roll looking for a specific pasta recipe. I knew I had it. I just couldn't find it.",
-      "paragraph3": "That was the moment Cuisto was born. I wanted to build one beautiful place for all recipes — organized, searchable, and actually usable when you're standing in the kitchen with messy hands."
+      "paragraph1": "Like you, I've saved hundreds of recipes across Instagram, TikTok, random websites, screenshots, and notes, most of which I never actually cooked because I simply forgot they existed.",
+      "paragraph2": "I'd stand in my kitchen with no idea what to make, completely forgetting the dozens of dishes I already knew how to cook.",
+      "paragraph3": "So I built Cuisto: one place where every recipe lives, organized and ready for when inspiration (or hunger) strikes."
     },
     "contact": "Have a feature request or just want to say hi?"
   },
