@@ -7,6 +7,8 @@
     "howItWorks": "How it works",
     "features": "Features",
     "story": "Story",
+    "recipes": "Recipes",
+    "blog": "Blog",
     "getEarlyAccess": "Get Early Access"
   },
   "hero": {
@@ -139,6 +141,8 @@
   "footer": {
     "tagline": "One beautiful place for all your recipes.",
     "tagline2": "Save, organize, cook.",
+    "recipes": "Recipes",
+    "blog": "Blog",
     "contact": "Contact",
     "privacy": "Privacy",
     "terms": "Terms",
@@ -181,7 +185,7 @@
     "photos": "Photos",
     "dictation": "Dictation"
   },
-  "recipes": {
+  "recipeExamples": {
     "spicyVodkaPasta": "Spicy Vodka Pasta",
     "gigiHadidStyle": "Gigi Hadid Style",
     "greenGoddessSalad": "Green Goddess Salad",
@@ -206,5 +210,45 @@
   "languageSwitcher": {
     "en": "English",
     "fr": "Français"
+  },
+  "recipes": {
+    "listingTitle": "Browse Recipes | Cuisto",
+    "listingDescription": "Discover delicious recipes extracted from TikTok, Instagram, and your favorite websites. Find your next meal inspiration.",
+    "browseRecipes": "Browse Recipes",
+    "browseDescription": "Explore our collection of community-curated recipes from across the web.",
+    "defaultDescription": "A delicious {title} recipe from Cuisto",
+    "backToRecipes": "Back to Recipes",
+    "prepTime": "Prep",
+    "cookTime": "Cook",
+    "totalTime": "Total",
+    "servings": "servings",
+    "difficulty": "Difficulty",
+    "timesCookedBy": "Cooked by {count} people",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "minutes": "min",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "step": "Step {number}",
+    "getTheApp": "Get the Cuisto App",
+    "getTheAppDescription": "Save this recipe and thousands more to your personal cookbook. Cook with built-in timers and step-by-step mode.",
+    "share": "Share",
+    "sourceLabel": "Original source",
+    "noRecipes": "No recipes found. Check back soon!",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {current} of {total}",
+    "filteringBy": "Filtering by"
+  },
+  "blog": {
+    "listingTitle": "Cuisto Blog | Cooking Tips & Food Inspiration",
+    "listingDescription": "Discover cooking tips, recipe ideas, and the latest from Cuisto. Your guide to better home cooking.",
+    "title": "Cuisto Blog",
+    "subtitle": "Cooking tips, recipe ideas, and inspiration for the modern home cook.",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "share": "Share",
+    "noPosts": "No blog posts yet. Check back soon!"
   }
 }

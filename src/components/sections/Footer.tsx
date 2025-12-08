@@ -90,6 +90,18 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex flex-wrap items-center justify-center gap-8"
             >
+              <Link
+                href="/recipes"
+                className="text-forest-300 hover:text-white transition-colors duration-300"
+              >
+                {t("recipes")}
+              </Link>
+              <Link
+                href="/blog"
+                className="text-forest-300 hover:text-white transition-colors duration-300"
+              >
+                {t("blog")}
+              </Link>
               <a
                 href="mailto:harry@cuisto.app"
                 className="text-forest-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group"

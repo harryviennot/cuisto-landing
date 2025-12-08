@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import Button from "../ui/Button";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 
@@ -104,6 +105,18 @@ export default function Navigation() {
                     {item.label}
                   </button>
                 ))}
+                <Link
+                  href="/recipes"
+                  className="text-sm font-medium text-text-body hover:text-primary transition-colors"
+                >
+                  {t("recipes")}
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-sm font-medium text-text-body hover:text-primary transition-colors"
+                >
+                  {t("blog")}
+                </Link>
               </div>
 
               {/* Right side: Language Switcher + CTA */}

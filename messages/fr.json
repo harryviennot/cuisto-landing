@@ -7,6 +7,8 @@
     "howItWorks": "Comment ça marche",
     "features": "Fonctionnalités",
     "story": "L'histoire",
+    "recipes": "Recettes",
+    "blog": "Blog",
     "getEarlyAccess": "Accès anticipé"
   },
   "hero": {
@@ -139,6 +141,8 @@
   "footer": {
     "tagline": "Toutes vos recettes, au même endroit.",
     "tagline2": "Capturez, organisez, cuisinez.",
+    "recipes": "Recettes",
+    "blog": "Blog",
     "contact": "Contact",
     "privacy": "Confidentialité",
     "terms": "CGU",
@@ -181,7 +185,7 @@
     "photos": "Photos",
     "dictation": "Dictée"
   },
-  "recipes": {
+  "recipeExamples": {
     "spicyVodkaPasta": "Pâtes à la vodka",
     "gigiHadidStyle": "Recette TikTok",
     "greenGoddessSalad": "Salade verte complète",
@@ -206,5 +210,45 @@
   "languageSwitcher": {
     "en": "English",
     "fr": "Français"
+  },
+  "recipes": {
+    "listingTitle": "Parcourir les recettes | Cuisto",
+    "listingDescription": "Découvrez de délicieuses recettes extraites de TikTok, Instagram et vos sites préférés. Trouvez l'inspiration pour votre prochain repas.",
+    "browseRecipes": "Parcourir les recettes",
+    "browseDescription": "Explorez notre collection de recettes de la communauté, venues de tout le web.",
+    "defaultDescription": "Une délicieuse recette de {title} sur Cuisto",
+    "backToRecipes": "Retour aux recettes",
+    "prepTime": "Préparation",
+    "cookTime": "Cuisson",
+    "totalTime": "Total",
+    "servings": "portions",
+    "difficulty": "Difficulté",
+    "timesCookedBy": "Cuisinée par {count} personnes",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "minutes": "min",
+    "ingredients": "Ingrédients",
+    "instructions": "Instructions",
+    "step": "Étape {number}",
+    "getTheApp": "Télécharger Cuisto",
+    "getTheAppDescription": "Enregistrez cette recette et des milliers d'autres dans votre carnet personnel. Cuisinez avec minuteries intégrées et mode pas à pas.",
+    "share": "Partager",
+    "sourceLabel": "Source originale",
+    "noRecipes": "Aucune recette trouvée. Revenez bientôt !",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {current} sur {total}",
+    "filteringBy": "Filtré par"
+  },
+  "blog": {
+    "listingTitle": "Blog Cuisto | Astuces cuisine et inspiration",
+    "listingDescription": "Découvrez nos conseils de cuisine, idées de recettes et actualités Cuisto. Votre guide pour mieux cuisiner à la maison.",
+    "title": "Blog Cuisto",
+    "subtitle": "Astuces cuisine, idées de recettes et inspiration pour cuisiner au quotidien.",
+    "readMore": "Lire la suite",
+    "backToBlog": "Retour au blog",
+    "share": "Partager",
+    "noPosts": "Aucun article pour l'instant. Revenez bientôt !"
   }
 }
