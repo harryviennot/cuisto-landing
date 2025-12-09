@@ -158,7 +158,7 @@ export default function RecipeDetail({ recipe, locale, translations: t }: Props)
         </aside>
 
         {/* Instructions */}
-        <div>
+        <div className="pt-6">
           <InstructionsList
             instructions={recipe.instructions}
             title={t.instructions}

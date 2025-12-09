@@ -86,19 +86,20 @@ function InstructionItem({
 
       {/* Content */}
       <div className="flex-1 pt-1">
-        <h4 className="font-medium text-text-heading mb-1">
-          {stepPrefix}{step_number}
-          {title && title !== `Step ${step_number}` && `: ${title}`}
-        </h4>
+        <div className="flex flex-row justify-between gap-2 mb-1">
+          <h4 className="font-medium text-text-heading ">
+            {stepPrefix}{step_number}
+            {title && title !== `Step ${step_number}` && `: ${title}`}
+          </h4>
+          {timer_minutes && (
+            <div className="inline-flex items-center gap-1.5 px-2 border border-border  text-muted rounded-full text-sm">
+              <Timer className="w-4 h-4" weight="fill" />
+              <span>{timer_minutes} min</span>
+            </div>
+          )}
+        </div>
         <p className="text-text-body leading-relaxed">{description}</p>
 
-        {/* Timer badge */}
-        {timer_minutes && (
-          <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 rounded-full text-sm">
-            <Timer className="w-4 h-4" weight="fill" />
-            <span>{timer_minutes} min</span>
-          </div>
-        )}
       </div>
     </li>
   );
