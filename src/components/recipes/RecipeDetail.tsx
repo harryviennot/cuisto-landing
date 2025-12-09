@@ -166,7 +166,7 @@ export default function RecipeDetail({ recipe, locale, translations: t }: Props)
           />
 
           {/* Source attribution */}
-          {recipe.source_url && (
+          {recipe.source_url && recipe.source_type !== "photo" && (
             <div className="mt-8 p-4 bg-brown-50 rounded-lg">
               <p className="text-sm text-text-muted">
                 {t.sourceLabel}:{" "}
