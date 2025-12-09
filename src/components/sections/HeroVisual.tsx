@@ -162,7 +162,7 @@ const SHOWCASE_DATA: ShowcaseItem[][] = [
 
 export default function HeroVisual() {
     const tSources = useTranslations("sources");
-    const tRecipes = useTranslations("recipes");
+    const tRecipes = useTranslations("recipeExamples");
     const tVisuals = useTranslations("visuals");
     const [activeIndex, setActiveIndex] = useState(0);
     const [variantIndices, setVariantIndices] = useState([0, 0, 0, 0]);

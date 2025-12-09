@@ -25,6 +25,7 @@ export default function HowItWorks() {
 
   return (
     <section
+      id="how-it-works"
       ref={containerRef}
       className="relative py-24 sm:py-32 bg-forest-950 overflow-hidden"
     >
