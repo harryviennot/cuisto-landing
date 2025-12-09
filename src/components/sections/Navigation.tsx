@@ -116,15 +116,22 @@ export default function Navigation() {
                 <div className="absolute inset-0 rounded-xl bg-primary opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
               </div>
               <span
-                className="text-xl font-semibold text-text-heading tracking-tight hidden sm:block"
+                className="text-xl font-semibold text-text-heading tracking-tight"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 Cuisto
               </span>
             </motion.a>
 
-            {/* Navigation Links - Desktop (lg+: all items, md-lg: only Recipes & Blog) */}
+            {/* Navigation Links - Desktop (lg+: all items, md-lg: Home + Recipes + Blog) */}
             <div className="hidden md:flex items-center gap-8">
+              {/* Home link only visible on medium screens (when section links are hidden) */}
+              <Link
+                href="/"
+                className="lg:hidden text-sm font-medium text-text-body hover:text-primary transition-colors"
+              >
+                {t("home")}
+              </Link>
               {/* Section links only visible on large screens */}
               {navItems.map((item) => (
                 <button

@@ -4,6 +4,7 @@
     "description": "Turn TikToks, screenshots, and scattered links into your personal cookbook. AI-powered recipe extraction from any source."
   },
   "navigation": {
+    "home": "Home",
     "howItWorks": "How it works",
     "features": "Features",
     "story": "Story",
