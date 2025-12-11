@@ -7,11 +7,6 @@ import Founder from "@/components/sections/Founder";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/sections/Footer";
 
-// Pre-generate for all locales at build time
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "fr" }];
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen">
