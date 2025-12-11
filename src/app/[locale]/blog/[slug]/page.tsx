@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { createServerSupabase, getBuildTimeSupabase } from "@/lib/supabase-server";
+import { createServerSupabase } from "@/lib/supabase-server";
 import { parseBlogPostRow } from "@/types/blog";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import Navigation from "@/components/sections/Navigation";
@@ -17,20 +17,8 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-// Pre-generate published posts at build time
-export async function generateStaticParams() {
-  const supabase = getBuildTimeSupabase();
-  if (!supabase) return [];
-
-  const { data: posts } = await supabase
-    .from("blog_posts")
-    .select("slug")
-    .eq("is_published", true) as { data: { slug: string }[] | null };
-
-  return (posts ?? []).map((post) => ({
-    slug: post.slug,
-  }));
-}
+// Note: generateStaticParams removed to avoid DYNAMIC_SERVER_USAGE error
+// Pages are rendered on-demand with ISR caching (revalidate: 3600)
 
 async function getPostBySlug(slug: string) {
   const supabase = createServerSupabase();

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { createServerSupabase, getBuildTimeSupabase } from "@/lib/supabase-server";
+import { createServerSupabase } from "@/lib/supabase-server";
 import { parseRecipeRow } from "@/types/recipe";
 import RecipeDetail from "@/components/recipes/RecipeDetail";
 import RecipeJsonLd from "@/components/recipes/RecipeJsonLd";
@@ -18,26 +18,8 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-// Pre-generate top recipes at build time
-export async function generateStaticParams() {
-  const supabase = getBuildTimeSupabase();
-  if (!supabase) return [];
-
-  const { data: recipes } = await supabase
-    .from("recipes")
-    .select("slug")
-    .eq("is_public", true)
-    .eq("is_draft", false)
-    .not("slug", "is", null)
-    .order("total_times_cooked", { ascending: false })
-    .limit(50) as { data: { slug: string | null }[] | null };
-
-  return (recipes ?? [])
-    .filter((recipe): recipe is { slug: string } => recipe.slug !== null)
-    .map((recipe) => ({
-      slug: recipe.slug,
-    }));
-}
+// Note: generateStaticParams removed to avoid DYNAMIC_SERVER_USAGE error
+// Pages are rendered on-demand with ISR caching (revalidate: 3600)
 
 async function getRecipeBySlug(slug: string) {
   const supabase = createServerSupabase();
