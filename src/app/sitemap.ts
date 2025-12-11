@@ -33,16 +33,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .select("slug, updated_at")
       .eq("is_public", true)
       .eq("is_draft", false)
-      .not("slug", "is", null);
+      .not("slug", "is", null) as { data: { slug: string | null; updated_at: string | null }[] | null };
 
-    recipeUrls = (recipes || []).flatMap((recipe) =>
-      locales.map((locale) => ({
-        url: `${baseUrl}/${locale}/recipes/${recipe.slug}`,
-        lastModified: recipe.updated_at ? new Date(recipe.updated_at) : new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-      }))
-    );
+    recipeUrls = (recipes ?? [])
+      .filter((recipe): recipe is { slug: string; updated_at: string | null } => recipe.slug !== null)
+      .flatMap((recipe) =>
+        locales.map((locale) => ({
+          url: `${baseUrl}/${locale}/recipes/${recipe.slug}`,
+          lastModified: recipe.updated_at ? new Date(recipe.updated_at) : new Date(),
+          changeFrequency: "weekly" as const,
+          priority: 0.8,
+        }))
+      );
   }
 
   // Blog pages (dynamic)
@@ -51,9 +53,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const { data: posts } = await supabase
       .from("blog_posts")
       .select("slug, updated_at")
-      .eq("is_published", true);
+      .eq("is_published", true) as { data: { slug: string; updated_at: string | null }[] | null };
 
-    blogUrls = (posts || []).flatMap((post) =>
+    blogUrls = (posts ?? []).flatMap((post) =>
       locales.map((locale) => ({
         url: `${baseUrl}/${locale}/blog/${post.slug}`,
         lastModified: post.updated_at ? new Date(post.updated_at) : new Date(),

@@ -25,9 +25,9 @@ export async function generateStaticParams() {
   const { data: posts } = await supabase
     .from("blog_posts")
     .select("slug")
-    .eq("is_published", true);
+    .eq("is_published", true) as { data: { slug: string }[] | null };
 
-  return (posts || []).map((post) => ({
+  return (posts ?? []).map((post) => ({
     slug: post.slug,
   }));
 }

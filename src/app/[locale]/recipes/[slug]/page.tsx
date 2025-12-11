@@ -30,11 +30,13 @@ export async function generateStaticParams() {
     .eq("is_draft", false)
     .not("slug", "is", null)
     .order("total_times_cooked", { ascending: false })
-    .limit(50);
+    .limit(50) as { data: { slug: string | null }[] | null };
 
-  return (recipes || []).map((recipe) => ({
-    slug: recipe.slug!,
-  }));
+  return (recipes ?? [])
+    .filter((recipe): recipe is { slug: string } => recipe.slug !== null)
+    .map((recipe) => ({
+      slug: recipe.slug,
+    }));
 }
 
 async function getRecipeBySlug(slug: string) {

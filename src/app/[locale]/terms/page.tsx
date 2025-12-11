@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description: "Terms and Conditions for Cuisto - Read our terms of service and usage policies.",
 };
 
+// Pre-generate for all locales at build time
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "fr" }];
+}
+
 export default function TermsAndConditions() {
   return (
     <main className="min-h-screen bg-surface">

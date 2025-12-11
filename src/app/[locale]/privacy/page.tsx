@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description: "Privacy Policy for Cuistudio - Learn how we collect, use, and protect your personal information.",
 };
 
+// Pre-generate for all locales at build time
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "fr" }];
+}
+
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-surface">

@@ -23,7 +23,12 @@ const nextConfig: NextConfig = {
         hostname: "**",
       },
     ],
+    // Skip image optimization in development to avoid NAT64/private IP issues
+    // In production, Vercel's image optimizer handles this properly
+    unoptimized: process.env.NODE_ENV === "development",
   },
+  // Allow dev server access from network
+  allowedDevOrigins: ["http://192.0.0.2:3000"],
 };
 
 export default withNextIntl(nextConfig);

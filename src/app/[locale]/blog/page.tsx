@@ -9,6 +9,11 @@ import Footer from "@/components/sections/Footer";
 // ISR: Revalidate every hour
 export const revalidate = 3600;
 
+// Pre-generate for all locales at build time
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "fr" }];
+}
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
