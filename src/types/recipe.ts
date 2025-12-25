@@ -41,6 +41,23 @@ export type DifficultyLevel = "easy" | "medium" | "hard";
 export type SourceType = "video" | "photo" | "voice" | "url" | "paste" | "link";
 
 /**
+ * Category (slug only - frontend handles i18n translation)
+ */
+export interface Category {
+  id: string;
+  slug: string;
+  icon?: string | null;
+  display_order?: number;
+}
+
+/**
+ * Category with recipe count (for category listings)
+ */
+export interface CategoryWithCount extends Category {
+  recipe_count: number;
+}
+
+/**
  * Full recipe type with parsed JSON fields
  */
 export interface Recipe {
@@ -54,7 +71,8 @@ export interface Recipe {
   servings: number | null;
   difficulty: DifficultyLevel | null;
   tags: string[];
-  categories: string[];
+  category?: Category | null; // New: single category object
+  categories: string[]; // Deprecated: kept for backwards compat
   prep_time_minutes: number | null;
   cook_time_minutes: number | null;
   total_time_minutes: number | null;
@@ -84,7 +102,8 @@ export interface RecipeListItem {
   image_url: string | null;
   difficulty: DifficultyLevel | null;
   tags: string[];
-  categories: string[];
+  category?: Category | null; // New: single category object
+  categories: string[]; // Deprecated: kept for backwards compat
   prep_time_minutes: number | null;
   cook_time_minutes: number | null;
   total_time_minutes: number | null;
