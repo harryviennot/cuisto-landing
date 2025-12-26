@@ -15,9 +15,10 @@ interface Props {
     medium: string;
     hard: string;
   };
+  categoryTranslations: Record<string, string>;
 }
 
-export default function RecipeCard({ recipe, locale, translations: t }: Props) {
+export default function RecipeCard({ recipe, locale, translations: t, categoryTranslations }: Props) {
   // Map difficulty to color dot
   const difficultyDotColors: Record<DifficultyLevel, string> = {
     easy: "bg-primary",
@@ -35,11 +36,10 @@ export default function RecipeCard({ recipe, locale, translations: t }: Props) {
     recipe.total_time_minutes ||
     (recipe.prep_time_minutes || 0) + (recipe.cook_time_minutes || 0);
 
-  // Get category or first tag (fallback to 'Recipe')
-  const categoryLabel =
-    (recipe.categories && recipe.categories[0]) ||
-    (recipe.tags && recipe.tags[0]) ||
-    "RECIPE";
+  // Get category label from i18n translations, fallback to first tag or 'Recipe'
+  const categoryLabel = recipe.category?.slug
+    ? categoryTranslations[recipe.category.slug] || recipe.category.slug
+    : (recipe.tags && recipe.tags[0]) || "RECIPE";
 
   return (
     <motion.article

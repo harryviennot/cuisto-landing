@@ -51,17 +51,18 @@ async function RecipeListContent({
   page: string;
 }) {
   const t = await getTranslations({ locale, namespace: "recipes" });
+  const tCategories = await getTranslations({ locale, namespace: "categories" });
   const supabase = createServerSupabase();
 
   const pageSize = 24;
   const currentPage = parseInt(page) || 1;
   const offset = (currentPage - 1) * pageSize;
 
-  // Build query
+  // Build query - join with categories table
   let query = supabase
     .from("recipes")
     .select(
-      "id, slug, title, description, image_url, difficulty, tags, categories, prep_time_minutes, cook_time_minutes, total_time_minutes, average_rating, rating_count, total_times_cooked",
+      "id, slug, title, description, image_url, difficulty, tags, category_id, prep_time_minutes, cook_time_minutes, total_time_minutes, average_rating, rating_count, total_times_cooked, categories!category_id(id, slug)",
       { count: "exact" }
     )
     .eq("is_public", true)
@@ -69,8 +70,17 @@ async function RecipeListContent({
     .order("total_times_cooked", { ascending: false })
     .range(offset, offset + pageSize - 1);
 
+  // Filter by category slug if provided
   if (category) {
-    query = query.contains("categories", [category]);
+    // First get category_id from slug
+    const { data: categoryData } = await supabase
+      .from("categories")
+      .select("id")
+      .eq("slug", category)
+      .single();
+    if (categoryData) {
+      query = query.eq("category_id", categoryData.id);
+    }
   }
   if (tag) {
     query = query.contains("tags", [tag]);
@@ -78,7 +88,24 @@ async function RecipeListContent({
 
   const { data: recipes, count } = await query;
 
-  const parsedRecipes = (recipes || []).map(parseRecipeListItem);
+  // Parse recipes with category data
+  const parsedRecipes = (recipes || []).map((row) => ({
+    id: row.id,
+    slug: row.slug || null,
+    title: row.title,
+    description: row.description || null,
+    image_url: row.image_url || null,
+    difficulty: row.difficulty || null,
+    tags: row.tags || [],
+    category: row.categories ? { id: row.categories.id, slug: row.categories.slug } : null,
+    prep_time_minutes: row.prep_time_minutes || null,
+    cook_time_minutes: row.cook_time_minutes || null,
+    total_time_minutes: row.total_time_minutes || null,
+    average_rating: row.average_rating || null,
+    rating_count: row.rating_count || 0,
+    total_times_cooked: row.total_times_cooked || 0,
+  }));
+
   const totalPages = Math.ceil((count || 0) / pageSize);
 
   const translations = {
@@ -92,6 +119,27 @@ async function RecipeListContent({
     pageOf: t("pageOf", { current: currentPage, total: totalPages }),
   };
 
+  // Build category translations object
+  const categoryTranslations: Record<string, string> = {
+    "main-dishes": tCategories("main-dishes"),
+    "soups": tCategories("soups"),
+    "salads": tCategories("salads"),
+    "pasta-noodles": tCategories("pasta-noodles"),
+    "sandwiches": tCategories("sandwiches"),
+    "appetizers": tCategories("appetizers"),
+    "apero": tCategories("apero"),
+    "desserts": tCategories("desserts"),
+    "baked-goods": tCategories("baked-goods"),
+    "beverages": tCategories("beverages"),
+    "cocktails": tCategories("cocktails"),
+    "breakfast": tCategories("breakfast"),
+    "sides": tCategories("sides"),
+    "sauces-dips": tCategories("sauces-dips"),
+    "snacks": tCategories("snacks"),
+    "grilled": tCategories("grilled"),
+    "bowls-grains": tCategories("bowls-grains"),
+  };
+
   return (
     <RecipeGrid
       recipes={parsedRecipes}
@@ -100,6 +148,7 @@ async function RecipeListContent({
       currentPage={currentPage}
       pageSize={pageSize}
       translations={translations}
+      categoryTranslations={categoryTranslations}
     />
   );
 }

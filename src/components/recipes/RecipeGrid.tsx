@@ -22,6 +22,7 @@ interface Props {
     next: string;
     pageOf: string;
   };
+  categoryTranslations: Record<string, string>;
 }
 
 export default function RecipeGrid({
@@ -31,6 +32,7 @@ export default function RecipeGrid({
   currentPage,
   pageSize,
   translations: t,
+  categoryTranslations,
 }: Props) {
   const searchParams = useSearchParams();
   const totalPages = Math.ceil(totalCount / pageSize);
@@ -60,6 +62,7 @@ export default function RecipeGrid({
             recipe={recipe}
             locale={locale}
             translations={t}
+            categoryTranslations={categoryTranslations}
           />
         ))}
       </div>

@@ -71,8 +71,7 @@ export interface Recipe {
   servings: number | null;
   difficulty: DifficultyLevel | null;
   tags: string[];
-  category?: Category | null; // New: single category object
-  categories: string[]; // Deprecated: kept for backwards compat
+  category?: Category | null; // Single category object
   prep_time_minutes: number | null;
   cook_time_minutes: number | null;
   total_time_minutes: number | null;
@@ -102,8 +101,7 @@ export interface RecipeListItem {
   image_url: string | null;
   difficulty: DifficultyLevel | null;
   tags: string[];
-  category?: Category | null; // New: single category object
-  categories: string[]; // Deprecated: kept for backwards compat
+  category?: Category | null; // Single category object
   prep_time_minutes: number | null;
   cook_time_minutes: number | null;
   total_time_minutes: number | null;
@@ -162,7 +160,6 @@ export function parseRecipeRow(row: RecipeRow): Recipe {
     servings: row.servings,
     difficulty: row.difficulty,
     tags: row.tags || [],
-    categories: row.categories || [],
     prep_time_minutes: row.prep_time_minutes,
     cook_time_minutes: row.cook_time_minutes,
     total_time_minutes: row.total_time_minutes,
@@ -194,7 +191,6 @@ export function parseRecipeListItem(row: Partial<RecipeRow>): RecipeListItem {
     image_url: row.image_url || null,
     difficulty: row.difficulty || null,
     tags: row.tags || [],
-    categories: row.categories || [],
     prep_time_minutes: row.prep_time_minutes || null,
     cook_time_minutes: row.cook_time_minutes || null,
     total_time_minutes: row.total_time_minutes || null,
