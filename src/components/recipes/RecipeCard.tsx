@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, Bookmark, Fire, Users } from "@phosphor-icons/react";
+import { Clock } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import type { RecipeListItem, DifficultyLevel } from "@/types/recipe";
+import { formatDurationCompact } from "@/lib/format";
 
 interface Props {
   recipe: RecipeListItem;
@@ -103,7 +104,7 @@ export default function RecipeCard({ recipe, locale, translations: t, categoryTr
               <div className="flex flex-row items-center gap-1">
                 <Clock className="w-3 h-3 text-stone-400" weight="regular" />
                 <span className="text-[11px] font-medium tracking-wide text-stone-500">
-                  {totalTime} {t.minutes}
+                  {formatDurationCompact(totalTime)}
                 </span>
               </div>
             )}

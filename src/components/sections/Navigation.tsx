@@ -105,11 +105,11 @@ export default function Navigation() {
               whileTap={{ scale: 0.98 }}
             >
               <div className="relative">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-soft group-hover:shadow-medium transition-shadow duration-300 p-2">
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-soft group-hover:shadow-medium transition-shadow duration-300">
                   <img
-                    src="/images/cuisto-logo.png"
+                    src="/images/chef-toque.png"
                     alt="Cuisto"
-                    className="w-full h-full object-contain brightness-0 invert"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 {/* Subtle glow on hover */}

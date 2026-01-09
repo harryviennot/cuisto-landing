@@ -6,7 +6,6 @@
  * A smaller version of RecipeCard optimized for horizontal scroll sections.
  * Fixed width of 280px matching the mobile app.
  */
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, Fire, Users } from "@phosphor-icons/react";
@@ -14,6 +13,7 @@ import { motion } from "framer-motion";
 import type { RecipeListItem, DifficultyLevel } from "@/types/recipe";
 import type { StatsBadge } from "@/types/discovery";
 import { DISCOVERY_CONSTANTS } from "@/types/discovery";
+import { formatDurationCompact } from "@/lib/format";
 
 interface RecipeDiscoveryCardProps {
   recipe: RecipeListItem;
@@ -136,7 +136,7 @@ export function RecipeDiscoveryCard({
               <div className="flex items-center gap-1">
                 <Clock size={12} className="text-stone-400" weight="regular" />
                 <span className="text-[10px] font-medium text-stone-500">
-                  {totalTime} {t.minutes}
+                  {formatDurationCompact(totalTime)}
                 </span>
               </div>
             )}
