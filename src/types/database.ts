@@ -25,6 +25,7 @@ export interface Database {
           servings: number | null;
           difficulty: "easy" | "medium" | "hard" | null;
           tags: string[] | null;
+          category_id: string | null;
           categories: string[] | null;
           prep_time_minutes: number | null;
           cook_time_minutes: number | null;
@@ -56,6 +57,7 @@ export interface Database {
           servings?: number | null;
           difficulty?: "easy" | "medium" | "hard" | null;
           tags?: string[] | null;
+          category_id?: string | null;
           categories?: string[] | null;
           prep_time_minutes?: number | null;
           cook_time_minutes?: number | null;
@@ -87,6 +89,7 @@ export interface Database {
           servings?: number | null;
           difficulty?: "easy" | "medium" | "hard" | null;
           tags?: string[] | null;
+          category_id?: string | null;
           categories?: string[] | null;
           prep_time_minutes?: number | null;
           cook_time_minutes?: number | null;
@@ -107,6 +110,26 @@ export interface Database {
           is_draft?: boolean;
           slug?: string | null;
           image_source?: string | null;
+        };
+      };
+      categories: {
+        Row: {
+          id: string;
+          slug: string;
+          title: string | null;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title?: string | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          slug?: string;
+          title?: string | null;
+          created_at?: string | null;
         };
       };
       blog_posts: {

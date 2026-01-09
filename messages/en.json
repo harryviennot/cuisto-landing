@@ -270,5 +270,27 @@
     "snacks": "Snacks",
     "grilled": "Grilled",
     "bowls-grains": "Bowls & Grains"
+  },
+  "discovery": {
+    "sections": {
+      "trending": {
+        "title": "Trending This Week"
+      },
+      "socials": {
+        "title": "Trending on Socials"
+      },
+      "online": {
+        "title": "Popular Recipes Online"
+      },
+      "rated": {
+        "title": "Highest Rated"
+      }
+    },
+    "categories": {
+      "all": "All"
+    },
+    "seeMore": "See more",
+    "allRecipes": "All Recipes",
+    "popularRecipes": "Popular Recipes"
   }
 }

@@ -75,8 +75,8 @@ export default function RecipeJsonLd({ recipe, locale }: Props) {
     // Instructions
     recipeInstructions: instructionSteps.length > 0 ? instructionSteps : undefined,
 
-    // Categories and tags
-    recipeCategory: recipe.categories?.[0],
+    // Category and tags
+    recipeCategory: recipe.category?.slug,
     keywords: recipe.tags?.join(", "),
 
     // Ratings (only if we have ratings)
