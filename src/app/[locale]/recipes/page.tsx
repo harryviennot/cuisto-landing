@@ -155,6 +155,7 @@ async function RecipeListContent({
     )
     .eq("is_public", true)
     .eq("is_draft", false)
+    .eq("is_hidden", false)
     .order("total_times_cooked", { ascending: false })
     .range(offset, offset + pageSize - 1);
 

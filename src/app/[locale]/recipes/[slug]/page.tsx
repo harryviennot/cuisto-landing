@@ -31,6 +31,7 @@ async function getRecipeBySlug(slug: string) {
     .eq("slug", slug)
     .eq("is_public", true)
     .eq("is_draft", false)
+    .eq("is_hidden", false)
     .single();
 
   // Fallback: try as UUID
@@ -41,6 +42,7 @@ async function getRecipeBySlug(slug: string) {
       .eq("id", slug)
       .eq("is_public", true)
       .eq("is_draft", false)
+      .eq("is_hidden", false)
       .single();
     recipe = uuidRecipe;
   }

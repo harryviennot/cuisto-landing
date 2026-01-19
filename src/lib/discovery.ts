@@ -73,7 +73,8 @@ export async function getTrendingThisWeek(
     )
     .in("id", recipeIds)
     .eq("is_public", true)
-    .eq("is_draft", false);
+    .eq("is_draft", false)
+    .eq("is_hidden", false);
 
   if (recipesError || !recipes) {
     return [];
@@ -128,6 +129,7 @@ export async function getTrendingOnSocials(
     .in("source_type", ["video"])
     .eq("recipes.is_public", true)
     .eq("recipes.is_draft", false)
+    .eq("recipes.is_hidden", false)
     .not("recipe_id", "is", null);
 
   if (error || !data) {
@@ -199,6 +201,7 @@ export async function getPopularOnline(
     .in("source_type", ["url", "link"])
     .eq("recipes.is_public", true)
     .eq("recipes.is_draft", false)
+    .eq("recipes.is_hidden", false)
     .not("recipe_id", "is", null);
 
   if (error || !data) {
@@ -260,6 +263,7 @@ export async function getHighestRated(
     )
     .eq("is_public", true)
     .eq("is_draft", false)
+    .eq("is_hidden", false)
     .gte("rating_count", minRatingCount)
     .not("average_rating", "is", null)
     .order("average_rating", { ascending: false })
